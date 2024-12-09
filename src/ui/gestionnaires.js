@@ -17,4 +17,21 @@ export const setupGestionnaire = () => {
     formSection.addEventListener('hidden.bs.collapse', () =>{
         livreForm.reset()
     })
+
+    // Traitement du formulaire
+    livreForm.addEventListener("submit", (evt) =>{
+        //Empécher le rechargement de la page
+        evt.preventDefault()
+        // Récupérer les valeurs saisies
+        const titre = livreForm.title.value
+        const auteur = livreForm.author.value
+        const resume = livreForm.summary.value
+        const estLu = livreForm.isRead.checked
+        console.log(titre,auteur,resume,estLu)
+
+
+        // Sauvegarder les données saisies
+
+
+    })
 }

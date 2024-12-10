@@ -32,6 +32,7 @@ export const insertLivre = (titre, auteur, resume, estLu) => {
 }
 
 export const findAllLivres = () => {
+    const livresJson = localStorage.getItem("livres")
     const livres = livresJson ? JSON.parse(livresJson) : []
     return livres
 }

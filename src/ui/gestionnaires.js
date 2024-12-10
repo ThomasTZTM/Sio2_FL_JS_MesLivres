@@ -1,5 +1,7 @@
 //console.log("JS - Gestionnaires - Mes Livres JS")
 
+import {insertLivre} from "../services/livreService.js";
+
 export const setupGestionnaire = () => {
 
     // Récupérer les éléments dans le DOM
@@ -27,41 +29,10 @@ export const setupGestionnaire = () => {
         const auteur = livreForm.author.value
         const resume = livreForm.summary.value
         const estLu = livreForm.isRead.checked
-        //console.log(titre,auteur,resume,estLu)
 
-        // *******************************
         // Sauvegarder les données saisies
-        // *******************************
+        insertLivre(titre,auteur,resume,estLu)
 
-        // 1. Créer un objet JS à partir des données saisies
-        const livre = {
-            titre : titre,
-            auteur : auteur,
-            resume : resume,
-            estLu : estLu,
-
-            id : crypto.randomUUID(),
-            createdAt : new Date().toDateString()
-        }
-        //console.log(livre)
-
-        // 2. Sérialiser transformer en json (str)
-        const livreJson = JSON.stringify(livre)
-        //console.log(livreJson)
-
-        // 3. Sauvegarder dans le localstorage (JSON)
-        // 3.1 Récupérer dans le localstorage la valeur liée à la clé "livres"
-        const livresJson = localStorage.getItem("livres")
-        //console.log(livreJson)
-        // 3.2 Désérialiser le JSON dans un tableau JS
-        const livres = livresJson ? JSON.parse(livresJson) : []
-        //console.log(livres)
-        // 3.3 Ajouter l'objet livre dans le tableau livre
-        livres.push(livre)
-        // 3.4 Sauvegarder le tableau livre dans le localstorage sous la clé "livres"
-        localStorage.setItem("livres",JSON.stringify(livres))
-
-        // 4. Cacher collapse le formulaire
         formCollapse.hide()
 
     })

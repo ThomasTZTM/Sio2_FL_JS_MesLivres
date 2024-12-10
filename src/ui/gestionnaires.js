@@ -1,6 +1,7 @@
 //console.log("JS - Gestionnaires - Mes Livres JS")
 
 import {insertLivre} from "../services/livreService.js";
+import {afficherLivres} from "./render.js";
 
 export const setupGestionnaire = () => {
 
@@ -35,6 +36,9 @@ export const setupGestionnaire = () => {
 
         // Fermer le formulaire
         formCollapse.hide()
+
+        // Re-afficher la liste des livres
+        afficherLivres()
 
     })
 }

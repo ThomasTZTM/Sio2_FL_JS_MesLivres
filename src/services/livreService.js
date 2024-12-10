@@ -30,3 +30,8 @@ export const insertLivre = (titre, auteur, resume, estLu) => {
     // 3.4 Sauvegarder le tableau livre dans le localstorage sous la clé "livres"
     localStorage.setItem("livres",JSON.stringify(livres))
 }
+
+export const findAllLivres = () => {
+    const livres = livresJson ? JSON.parse(livresJson) : []
+    return livres
+}

@@ -33,6 +33,7 @@ export const setupGestionnaire = () => {
         // Sauvegarder les données saisies
         insertLivre(titre,auteur,resume,estLu)
 
+        // Fermer le formulaire
         formCollapse.hide()
 
     })

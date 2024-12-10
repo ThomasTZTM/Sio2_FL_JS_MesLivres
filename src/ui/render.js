@@ -19,7 +19,7 @@ export const afficherLivres = () => {
         <div class="card-body">
             <div class="d-flex justify-content-between align-items-start mb-2">
                 <h5 class="card-title mb-0">${livre.titre}</h5>
-                <span class="badge ${livre.estLu ? 'bg-success' : 'bg-secondary'} toggle-read-btn" 
+                <span class="badge ${livre.estLu ? 'bg-success' : 'bg-secondary'} toggle-read-btn " data-id="${livre.id}" 
                         style="cursor: pointer;" >
                     ${livre.estLu ? '<i class="bi bi-check-circle me-1"></i>Lu' : '<i class="bi bi-circle me-1"></i>Non lu'}
                 </span>
@@ -32,7 +32,7 @@ export const afficherLivres = () => {
                 <small class="text-muted">
                     <i class="bi bi-calendar3 me-1"></i>${$date}
                 </small>
-                <button class="btn btn-outline-danger btn-sm delete-btn" >
+                <button class="btn btn-outline-danger btn-sm delete-btn" data-id="${livre.id}" >
                     <i class="bi bi-trash me-1"></i>Supprimer
                 </button>
             </div>

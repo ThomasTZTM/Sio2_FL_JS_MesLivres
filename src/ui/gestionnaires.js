@@ -2,6 +2,7 @@
 
 import {insertLivre} from "../services/livreService.js";
 import {afficherLivres} from "./render.js";
+import {supprimerLivre} from "../services/livreService.js";
 
 export const setupGestionnaire = () => {
 
@@ -40,5 +41,24 @@ export const setupGestionnaire = () => {
         // Re-afficher la liste des livres
         afficherLivres()
 
+
+    })
+
+    // Traitement suppression d'un livre
+    // Délégation d'évenement
+    const listeLivres = document.querySelector("#booksList")
+    listeLivres.addEventListener("click", (evt) =>{   // gérer le click
+        // Récupérer l'élement sur lequel on à clicker
+        const target = evt.target.closest(".delete-btn, .toggle-read-btn")
+        if (target === null) return;
+        // Récupérer l'id du livre à supprimer
+        const idLivre = target.dataset.id
+        // Déterminer
+        if (target.classList.contains("delete-btn")) {
+            supprimerLivre(idLivre)
+            afficherLivres()
+        }else if (target.classList.contains("toggle-read-btn")) {
+            console.log("Toogle cliqué")
+        }
     })
 }

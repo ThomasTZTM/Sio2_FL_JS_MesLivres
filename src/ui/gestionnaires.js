@@ -1,6 +1,6 @@
 //console.log("JS - Gestionnaires - Mes Livres JS")
 
-import {insertLivre} from "../services/livreService.js";
+import {insertLivre, modifierEtat} from "../services/livreService.js";
 import {afficherLivres} from "./render.js";
 import {supprimerLivre} from "../services/livreService.js";
 
@@ -58,7 +58,7 @@ export const setupGestionnaire = () => {
             supprimerLivre(idLivre)
             afficherLivres()
         }else if (target.classList.contains("toggle-read-btn")) {
-            console.log("Toogle cliqué")
+            console.log("modiiffififiifififgoig")
         }
     })
 }

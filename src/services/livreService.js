@@ -46,5 +46,15 @@ export const supprimerLivre = id => {
     const livresRestants = livres.filter(livre => livre.id !== id)
     // Sauvegarder dans le local storage
     localStorage.setItem("livres",JSON.stringify(livresRestants))
+}
 
+export const modifierEtat = id => {
+    // recuperer depuis local storage
+    const livresJson = localStorage.getItem("livres")
+    // Désérialiser
+    const livres = livresJson ? JSON.parse(livresJson) : []
+    // Moddifier un livre avec l'id 'id' dans le tableau livre
+    const livresRestants = livres.filter(livre => livre.id !== id)
+    // Sauvegarder dans le local storage
+    localStorage.setItem("livres",JSON.stringify(livresRestants))
 }

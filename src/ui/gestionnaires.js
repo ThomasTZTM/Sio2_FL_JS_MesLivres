@@ -58,7 +58,7 @@ export const setupGestionnaire = () => {
             supprimerLivre(idLivre)
             afficherLivres()
         }else if (target.classList.contains("toggle-read-btn")) {
-            console.log("modiiffififiifififgoig")
+            console.log("modif")
         }
     })
 }
